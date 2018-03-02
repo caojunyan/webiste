@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
-    这是脚步
+    <div class="container">
+      <img src="../assets/logo.png" alt="" class="logo">
+    </div>
   </div>
 </template>
 
@@ -16,4 +18,13 @@
   height: 222px;
   background: #6A6865;
 }
+  .container{
+    width: 60%;
+    margin: 0 auto;
+  }
+  .logo{
+    width: 180px;
+    height: 56px;
+    line-height: 222px;
+  }
 </style>
