@@ -1,27 +1,37 @@
 <template>
 <div class="header">
   <span class="title">武汉秒车网科技有限公司</span>
-  <ul class="nav">
+  <ul class="nav" >
     <li>
-      <router-link :to="{ path: '/' }">首页</router-link>
+      <a href="#" :class="{ active: 1==isActive }" @click="onSwitch(1)">首页</a>
     </li>
     <li>
-      <router-link :to="{ path: '/serve' }">服务</router-link>
+      <a href="#service" :class="{ active: 2==isActive }" @click="onSwitch(2)">服务</a>
     </li>
     <li>
-      <router-link :to="{ path: '/about' }">关于</router-link>
+      <a href="#about" :class="{ active: 3==isActive }" @click="onSwitch(3)">关于</a>
     </li>
     <li>
-      <router-link :to="{ path: '/contact' }">联系我们</router-link>
+      <a href="#contact" :class="{ active: 4==isActive }" @click="onSwitch(4)">联系我们</a>
     </li>
   </ul>
-  <router-view></router-view>
+
 </div>
 </template>
 
 <script>
     export default {
-        name: "my-header"
+      name: "my-header",
+      data(){
+        return{
+          isActive:1
+        }
+      },
+     methods:{
+       onSwitch(index){
+         this.isActive=index;
+       }
+     }
     }
 </script>
 
@@ -30,6 +40,10 @@
   width:100%;
   height: 80px;
   background: #4E4E4D;
+  position: fixed;
+  top:0px;
+  left:0px;
+  z-index:200;
 }
   .title{
     width: 28%;
@@ -64,7 +78,11 @@
     width: 100%;
     height: 100%;
   }
-  .router-link-exact-active{
+  a.active{
     background: #3D3D3C;
   }
+  a.hover{
+    background: #3D3D3C;
+  }
+
 </style>
