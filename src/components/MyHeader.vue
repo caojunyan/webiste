@@ -1,20 +1,22 @@
 <template>
 <div class="header">
-  <span class="title">武汉秒车网科技有限公司</span>
-  <ul class="nav" >
-    <li>
-      <a href="#" :class="{ active: 1==isActive }" @click="onSwitch(1)">首页</a>
-    </li>
-    <li>
-      <a href="#service" :class="{ active: 2==isActive }" @click="onSwitch(2)">服务</a>
-    </li>
-    <li>
-      <a href="#about" :class="{ active: 3==isActive }" @click="onSwitch(3)">关于</a>
-    </li>
-    <li>
-      <a href="#contact" :class="{ active: 4==isActive }" @click="onSwitch(4)">联系我们</a>
-    </li>
-  </ul>
+  <div>
+    <span class="title">武汉秒车网科技有限公司</span>
+    <ul class="nav" >
+      <li>
+        <a href="#" :class="{ active: 1==isActive }" @click="onSwitch(1)">首页</a>
+      </li>
+      <li>
+        <a href="#service" :class="{ active: 2==isActive }" @click="onSwitch(2)">服务</a>
+      </li>
+      <li>
+        <a href="#about" :class="{ active: 3==isActive }" @click="onSwitch(3)">关于</a>
+      </li>
+      <li>
+        <a href="#contact" :class="{ active: 4==isActive }" @click="onSwitch(4)">联系我们</a>
+      </li>
+    </ul>
+  </div>
 
 </div>
 </template>
@@ -45,6 +47,10 @@
   left:0px;
   z-index:200;
 }
+.header>div{
+  width: 69%;
+  margin: 0 auto;
+}
   .title{
     width: 28%;
     padding-left: 20px;
@@ -56,12 +62,11 @@
     letter-spacing: 3px;
   }
   .nav{
-    width: 70%;
+    width: 68%;
     display: inline-block;
     float: right;
     list-style: none;
     height: 100%;
-
   }
   .nav>li{
     float: left;

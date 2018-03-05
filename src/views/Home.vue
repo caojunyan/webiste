@@ -8,7 +8,7 @@
         <p>您的企业发展好帮手</p>
       </div>
       <div class="intro_pic">
-        <img src="../assets/banner.png" alt="">
+        <img src="../../static/img/banner.png" alt="">
       </div>
     </div>
     <!--四个圆-->
@@ -18,25 +18,25 @@
           <div v-show="aa">
             <dl>
               <dt>
-                <img src="../assets/team.png" alt="">
+                <img src="../../static/img/team.png" alt="">
               </dt>
               <dd>专业团队</dd>
             </dl>
             <dl>
               <dt>
-                <img src="../assets/iconfont-fuwushichang.png" alt="">
+                <img src="../../static/img/iconfont-fuwushichang.png" alt="">
               </dt>
               <dd>优质售后</dd>
             </dl>
             <dl>
               <dt>
-                <img src="../assets/iconfont-yiqiyibiao(1).png" alt="">
+                <img src="../../static/img/iconfont-yiqiyibiao(1).png" alt="">
               </dt>
               <dd>快速高效</dd>
             </dl>
             <dl>
               <dt>
-                <img src="../assets/good(1).png" alt="">
+                <img src="../../static/img/good(1).png" alt="">
               </dt>
               <dd>客户好评</dd>
             </dl>
@@ -52,16 +52,16 @@
         <div class="img-container">
           <dl>
             <dt>
-              <img src="../assets/service1.png" alt="">
+              <img src="../../static/img/service1.png" alt="">
             </dt>
             <dd>
-              <p>达成高校合作</p>
+              <p>达成高效合作</p>
               <p>High efficient corperation</p>
             </dd>
           </dl>
           <dl>
             <dt>
-              <img src="../assets/service2.png" alt="">
+              <img src="../../static/img/service2.png" alt="">
             </dt>
             <dd>
               <p>提供优质产品</p>
@@ -70,7 +70,7 @@
           </dl>
           <dl>
             <dt>
-              <img src="../assets/service3.png" alt="">
+              <img src="../../static/img/service3.png" alt="">
             </dt>
             <dd>
               <p>提升客户价值 </p>
@@ -91,7 +91,7 @@
     </div>
     <!--banner图片-->
     <div class="banner_pic">
-      <img src="../assets/banner_pic.png" alt="">
+      <img src="../../static/img/banner_pic.png" alt="">
     </div>
     <!--联系我们-->
     <transition name="bounce">
