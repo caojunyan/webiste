@@ -177,6 +177,12 @@
           this.aa = false
         }
       },
+      // 提交
+      submit(){
+        this.$axios.get("/",).then(res=>{
+          console.log(res);
+        });
+      },
       form () {
         this.scroll = document.body.scrollTop;
         if (this.scroll >= 300) {
