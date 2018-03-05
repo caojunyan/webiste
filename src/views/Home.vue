@@ -148,7 +148,26 @@
       send(){
         var name=this.name;
         var number=this.number;
-        console.log(name,number)
+        this.testNumber();
+      },
+      // 手机号正则
+      testNumber(){
+        var phone=/^[1][3,4,5,7,8][0-9]{9}$/;
+        var email=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+        if (!phone.test(this.number)&&!email.test(this.number)) {
+          alert('请输入正确手机号或者邮箱')
+          return false;
+        }else{
+          this.testName();
+        }
+      },
+      testName(){
+        if (this.name=='') {
+          alert('请输入客户名')
+          return false;
+        }else{
+
+        }
       },
       menu () {
         this.scroll = document.body.scrollTop;
