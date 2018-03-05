@@ -3,21 +3,22 @@
     <my-header></my-header>
     <!--banner图-->
     <div class="banner">
-        <div class="intro_info">
-          <h1 class="title">提升客户价值，增强企业竞争力</h1>
-          <p>您的企业发展好帮手</p>
-        </div>
-        <div class="intro_pic">
-          <img src="../assets/banner.png" alt="">
-        </div>
+      <div class="intro_info">
+        <h1 class="title">提升客户价值，增强企业竞争力</h1>
+        <p>您的企业发展好帮手</p>
+      </div>
+      <div class="intro_pic">
+        <img src="../assets/banner.png" alt="">
+      </div>
     </div>
     <!--四个圆-->
     <div class="skill">
-        <div class="content">
-          <div>
+      <div class="content" >
+        <transition name="bounce">
+          <div v-show="aa">
             <dl>
               <dt>
-                  <img src="../assets/team.png" alt="">
+                <img src="../assets/team.png" alt="">
               </dt>
               <dd>专业团队</dd>
             </dl>
@@ -40,7 +41,8 @@
               <dd>客户好评</dd>
             </dl>
           </div>
-        </div>
+        </transition>
+      </div>
     </div>
     <!--服务宗旨-->
     <div class="serve" id="service">
@@ -117,37 +119,52 @@
 </template>
 
 <script>
-import MyHeader from '../components/MyHeader'
-import MyFooter from '../components/MyFooter'
-export default {
-  name: '',
-  data () {
-    return {
-      name:'',
-      number:''
-    }
-  },
-  components:{
-    MyHeader,
-    MyFooter
-  },
-  methods:{
-    send(){
+  import MyHeader from '../components/MyHeader'
+  import MyFooter from '../components/MyFooter'
+
+  export default {
+    name: '',
+    data () {
+      return {
+        name:'',
+        number:'',
+        scroll: '',
+        aa: false
+      }
+    },
+    mounted () {
+      window.addEventListener('scroll', this.menu)
+    },
+    components:{
+      MyHeader,
+      MyFooter
+    },
+    methods:{
+      send(){
         var name=this.name;
         var number=this.number;
         console.log(name,number)
+      },
+      menu () {
+        this.scroll = document.body.scrollTop;
+        if (this.scroll >= 500) {
+          this.aa = true
+        } else {
+          this.aa = false
+        }
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.banner{
-  width: 100%;
-  height: 818px;
-  background: #fff;
-}
+  .banner{
+    margin-top: 80px;
+    width: 100%;
+    height: 818px;
+    background: #fff;
+  }
   .intro_info{
     float: left;
     width: 53%;
@@ -191,21 +208,21 @@ export default {
     height: 100%;
   }
   .content dl{
-      margin: 0 auto;
+    margin: 0 auto;
   }
   .content dl>dt{
     width: 120px;
     height: 145px;
   }
-.content dl>dt>img{
+  .content dl>dt>img{
     width: 120px;
-}
-.content dl>dd{
-  text-align: center;
-  color:#fff;
-  font-size: 20px;
-  font-weight: 600;
-}
+  }
+  .content dl>dd{
+    text-align: center;
+    color:#fff;
+    font-size: 20px;
+    font-weight: 600;
+  }
   .serve{
     width: 100%;
     height: 740px;
@@ -224,34 +241,43 @@ export default {
     font-weight: 400;
     line-height: 46px;
   }
-.server-content>p{
-  font-size: 22px;
-  color:#9f9f9f;
-  text-align: center;
-  line-height: 40px;
-}
+  .server-content>p{
+    font-size: 22px;
+    color:#9f9f9f;
+    text-align: center;
+    line-height: 40px;
+  }
   .img-container{
     margin-top: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
-.img-container>dl{
-  width: 425px;
-  text-align: center;
-  color:#666666;
-}
-.img-container img{
+  .img-container>dl{
+    width: 425px;
+    text-align: center;
+    color:#666666;
+  }
+  .img-container>dl>dt{
+    width: 100%;
     height: 320px;
-}
-.img-container>dl dd{
-  margin-top: 40px;
-  font-size: 20px;
-}
-.img-container p{
-  font-size: 20px;
-  color:#666666;
-}
+    overflow: hidden;
+  }
+  .img-container img{
+    cursor: pointer;
+    transition: all 0.6s;
+  }
+  .img-container img:hover{
+    transform: scale(1.4);
+  }
+  .img-container>dl dd{
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .img-container p{
+    font-size: 20px;
+    color:#666666;
+  }
   .about{
     width: 51%;
     height: 390px;
@@ -259,82 +285,82 @@ export default {
     padding-right: 24.5%;
     padding-top: 80px;
   }
-.about>h3{
-  text-align: center;
-  color: #9F9F9F;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 46px;
-}
+  .about>h3{
+    text-align: center;
+    color: #9F9F9F;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 46px;
+  }
   .about>h4{
     font-size: 22px;
     color: #9f9f9f;
     text-align: center;
     line-height: 40px;
   }
-.about>p{
-  font-size: 18px;
-  color:#999999;
-  letter-spacing: 3px;
-  line-height: 50px;
-  margin-top: 15px;
-  text-indent:44px
-}
-.banner_pic{
-  width: 100%;
-}
-.banner_pic>img{
-  width: 100%;
-}
+  .about>p{
+    font-size: 18px;
+    color:#999999;
+    letter-spacing: 3px;
+    line-height: 50px;
+    margin-top: 15px;
+    text-indent:44px
+  }
+  .banner_pic{
+    width: 100%;
+  }
+  .banner_pic>img{
+    width: 100%;
+  }
   .contact{
     width: 542px;
     margin: 0 auto;
     height: 545px;
     padding-top: 105px;
   }
-.contact>h3{
-  text-align: center;
-  color: #9F9F9F;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 46px;
-}
-.contact>h4{
-  font-size: 22px;
-  color: #9f9f9f;
-  text-align: center;
-  line-height: 40px;
-}
- .contact form div{
-   width: 100%;
-   height: 60px;
-   margin-top: 20px;
- }
-.name>input,.number>input{
-  width: 100%;
-  height: 100%;
-  outline: none;
-  border: 1px solid #B4B4B1;
-  text-indent: 20px;
-  font-size: 18px;
-  color:#dadada;
-}
-::-webkit-input-placeholder { /* WebKit browsers */
-  font-size:18px;
-  color:#DADADA;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  font-size:18px;
-  color:#DADADA;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  font-size:18px;
-  color:#DADADA;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  font-size:18px;
-  color:#DADADA;
-}
+  .contact>h3{
+    text-align: center;
+    color: #9F9F9F;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 46px;
+  }
+  .contact>h4{
+    font-size: 22px;
+    color: #9f9f9f;
+    text-align: center;
+    line-height: 40px;
+  }
+  .contact form div{
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+  }
+  .name>input,.number>input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid #B4B4B1;
+    text-indent: 20px;
+    font-size: 18px;
+    color:#dadada;
+  }
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    font-size:18px;
+    color:#DADADA;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size:18px;
+    color:#DADADA;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size:18px;
+    color:#DADADA;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size:18px;
+    color:#DADADA;
+  }
   .send>input{
     width: 100%;
     height: 60px;
@@ -356,4 +382,23 @@ export default {
   .address>p{
     line-height: 30px;
   }
+  /*动画事件*/
+  .bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-out .5s;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: translateY(-85px);
+    }
+    50% {
+      transform: translateY(-45px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
 </style>

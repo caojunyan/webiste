@@ -40,7 +40,7 @@
   width:100%;
   height: 80px;
   background: #4E4E4D;
-  /*position: fixed;*/
+  position: fixed;
   top:0px;
   left:0px;
   z-index:200;
