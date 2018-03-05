@@ -94,7 +94,8 @@
       <img src="../assets/banner_pic.png" alt="">
     </div>
     <!--联系我们-->
-    <div class="contact" id="contact">
+    <transition name="bounce">
+      <div class="contact" id="contact" v-show="aa">
       <h3>联系我们</h3>
       <h4>contact us</h4>
       <form action="">
@@ -114,6 +115,7 @@
         <p>联系方式：xxxxxxxx</p>
       </div>
     </div>
+    </transition>
     <my-footer></my-footer>
   </div>
 </template>
@@ -129,11 +131,14 @@
         name:'',
         number:'',
         scroll: '',
-        aa: false
+        aa: false,
+        scroll1:'',
+        bb:false
       }
     },
     mounted () {
       window.addEventListener('scroll', this.menu)
+      window.addEventListener('scroll', this.form)
     },
     components:{
       MyHeader,
@@ -147,10 +152,18 @@
       },
       menu () {
         this.scroll = document.body.scrollTop;
-        if (this.scroll >= 500) {
+        if (this.scroll >= 300) {
           this.aa = true
         } else {
           this.aa = false
+        }
+      },
+      form () {
+        this.scroll = document.body.scrollTop;
+        if (this.scroll >= 300) {
+          this.bb = true
+        } else {
+          this.bb = false
         }
       }
     }
