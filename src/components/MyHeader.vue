@@ -3,17 +3,17 @@
   <div>
     <span class="title">武汉秒车网科技有限公司</span>
     <ul class="nav" >
-      <li>
-        <a href="#" :class="{ active: 1==isActive }" @click="onSwitch(1)">首页</a>
+      <li >
+        <a href="javascript:void(0);" :class="{ active: 1==isActive }" @click="onSwitch(1)">首页</a>
       </li>
       <li>
-        <a href="#service" :class="{ active: 2==isActive }" @click="onSwitch(2)">服务</a>
+        <a href="javascript:void(0);" :class="{ active: 2==isActive }" @click="onSwitch(2)">服务</a>
       </li>
       <li>
-        <a href="#about" :class="{ active: 3==isActive }" @click="onSwitch(3)">关于</a>
+        <a href="javascript:void(0);" :class="{ active: 3==isActive }" @click="onSwitch(3)">关于</a>
       </li>
       <li>
-        <a href="#contact" :class="{ active: 4==isActive }" @click="onSwitch(4)">联系我们</a>
+        <a href="javascript:void(0);" :class="{ active: 4==isActive }" @click="onSwitch(4)">联系我们</a>
       </li>
     </ul>
   </div>
@@ -32,7 +32,16 @@
      methods:{
        onSwitch(index){
          this.isActive=index;
-       }
+         if(index==1){
+
+         }else if(index==2){
+
+         }else if(index==3){
+
+         }else{
+
+         }
+       },
      }
     }
 </script>

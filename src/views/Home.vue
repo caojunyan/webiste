@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
+  <div class="home wrapper" ref="wrapper" >
     <my-header></my-header>
     <!--banner图-->
-    <div class="banner">
+    <div class="banner" id="banner" >
       <div class="intro_info">
         <h1 class="title">提升客户价值，增强企业竞争力</h1>
         <p>您的企业发展好帮手</p>
@@ -85,7 +85,7 @@
       <h3>关于我们</h3>
       <h4>about us</h4>
       <p>
-        武汉海创科技有限公司是一家从事企业外包的新型互联网公司，现坐落于湖北武汉，目前主要服务于全国市场，帮助中小企业实现业务拓展和价值升级。其业务范围主要包括：企业门户网站的搭建，PC端，app端以及微信端客户平台的搭建以及维护，特别是为众多的小微企业打造安全稳定的互联网业务平台。
+        武汉秒车网科技有限公司是一家从事企业外包的新型互联网公司，现坐落于湖北武汉，目前主要服务于全国市场，帮助中小企业实现业务拓展和价值升级。其业务范围主要包括：企业门户网站的搭建，PC端，app端以及微信端客户平台的搭建以及维护，特别是为众多的小微企业打造安全稳定的互联网业务平台。
       </p>
 
     </div>
@@ -94,16 +94,16 @@
       <img src="../../static/img/banner_pic.png" alt="">
     </div>
     <!--联系我们-->
-    <transition name="bounce">
+    <transition name="bounce" >
       <div class="contact" id="contact" v-show="aa">
       <h3>联系我们</h3>
       <h4>contact us</h4>
       <form action="">
         <div class="name">
-          <input type="text" placeholder="客户姓名" v-model="name">
+          <input type="text" placeholder="客户姓名" v-model="name" >
         </div>
         <div class="number">
-          <input type="text" placeholder="联系方式" v-model="number">
+          <input type="text" placeholder="联系方式" v-model="number" >
         </div>
         <div class="send" @click="send">
           <input type="button" value="发送">
@@ -121,6 +121,7 @@
 </template>
 
 <script>
+  import BScroll from 'better-scroll'
   import MyHeader from '../components/MyHeader'
   import MyFooter from '../components/MyFooter'
 
@@ -139,6 +140,21 @@
     mounted () {
       window.addEventListener('scroll', this.menu)
       window.addEventListener('scroll', this.form)
+      this.$nextTick(() => {
+        this.scroll = new Bscroll(this.$refs.wrapper, {})
+      })
+    },
+    created:function() {
+// 主页添加键盘事件,注意,不能直接在焦点事件上添加回车
+      var lett = this;
+      document.onkeydown = function (e) {
+        var key = window.event.keyCode;
+        if (key == 116) {
+          var url=window.location.host ;
+         /* lett.$router.replace({path: url});*/
+       /*   window.location.href = url;*/
+        }
+      }
     },
     components:{
       MyHeader,
@@ -190,6 +206,12 @@
         } else {
           this.bb = false
         }
+      }
+    },
+    watch:{
+      'route':function(to,from){
+        console.log(to)
+        console.log(from)
       }
     }
   }
