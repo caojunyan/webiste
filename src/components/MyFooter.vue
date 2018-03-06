@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
-    <div class="container">
-      <div class="logo">
+    <div class="container row">
+      <div class="logo col-md-3 col-sm-3" >
         <img src="../../static/img/logo.png" alt="" class="img-responsive">
       </div>
-      <div class="footer-nav">
+      <div class="footer-nav col-md-7 col-sm-7">
        <!-- <ul>
           <li>联系我们</li>
           <li>资质证书</li>
@@ -19,7 +19,7 @@
           © Copyright 2018 武汉秒车网科技有限公司.All Rights Reserved.
         </p>
       </div>
-      <div class="erweima">
+      <div class="erweima col-md-2 col-sm-2">
         <img src="../../static/img/erweima.jpg" alt="" class="erweima img-responsive" >
       </div>
     </div>
@@ -99,8 +99,16 @@
 
 /*手机*/
 @media screen and (max-width:707px) {
+  .footer{
+
+  }
   .footer-nav{
     width: 100%;
+  }
+  .footer-nav>p{
+    font-size: .9rem;
+    letter-spacing: 0;
+    line-height: 1rem;
   }
 }
 /*平板*/
