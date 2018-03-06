@@ -11,28 +11,28 @@
     <div class="skill">
       <div class="container content" >
         <transition name="bounce">
-          <div v-show="aa" class="row">
+          <div  class="row">
             <dl class="col-md-3 col-sm-6">
               <dt>
-                <img src="../../static/img/team.png" alt="">
+                <img src="../../static/img/team.png" alt="" class="img-responsive">
               </dt>
               <dd>专业团队</dd>
             </dl>
             <dl class="col-md-3 col-sm-6">
               <dt>
-                <img src="../../static/img/iconfont-fuwushichang.png" alt="">
+                <img src="../../static/img/iconfont-fuwushichang.png" alt="" class="img-responsive">
               </dt>
               <dd>优质售后</dd>
             </dl>
             <dl class="col-md-3 col-sm-6">
               <dt>
-                <img src="../../static/img/iconfont-yiqiyibiao(1).png" alt="">
+                <img src="../../static/img/iconfont-yiqiyibiao(1).png" alt="" class="img-responsive">
               </dt>
               <dd>快速高效</dd>
             </dl>
             <dl class="col-md-3 col-sm-6">
               <dt>
-                <img src="../../static/img/good(1).png" alt="">
+                <img src="../../static/img/good(1).png" alt="" class="img-responsive">
               </dt>
               <dd>客户好评</dd>
             </dl>
@@ -41,32 +41,32 @@
       </div>
     </div>
     <!--服务宗旨-->
-  <!--  <div class="serve" id="service">
-      <div class="server-content">
+    <div class="serve" id="service">
+      <div class="server-content container">
         <h3>服务宗旨</h3>
         <P>our service</P>
-        <div class="img-container">
-          <dl>
+        <div class="img-container row">
+          <dl class="col-sm-12 col-md-4">
             <dt>
-              <img src="../../static/img/service1.png" alt="">
+              <img src="../../static/img/service1.png" alt="" class="img-responsive">
             </dt>
             <dd>
               <p>达成高效合作</p>
               <p>High efficient corperation</p>
             </dd>
           </dl>
-          <dl>
+          <dl class="col-sm-12 col-md-4">
             <dt>
-              <img src="../../static/img/service2.png" alt="">
+              <img src="../../static/img/service2.png" alt="" class="img-responsive">
             </dt>
             <dd>
               <p>提供优质产品</p>
               <p>Provide quality products</p>
             </dd>
           </dl>
-          <dl>
+          <dl class="col-sm-12 col-md-4">
             <dt>
-              <img src="../../static/img/service3.png" alt="">
+              <img src="../../static/img/service3.png" alt="" class="img-responsive">
             </dt>
             <dd>
               <p>提升客户价值 </p>
@@ -76,8 +76,8 @@
         </div>
       </div>
     </div>
-    &lt;!&ndash;关于我们&ndash;&gt;
-    <div class="about" id="about">
+    <!--关于我们-->
+    <div class="about container" id="about">
       <h3>关于我们</h3>
       <h4>about us</h4>
       <p>
@@ -85,13 +85,12 @@
       </p>
 
     </div>
-    &lt;!&ndash;banner图片&ndash;&gt;
-    <div class="banner_pic">
-      <img src="../../static/img/banner_pic.png" alt="">
+    <!--banner图片-->
+    <div class="banner_pic ">
+      <img src="../../static/img/banner_pic.png" alt="" class="img-responsive">
     </div>
-    &lt;!&ndash;联系我们&ndash;&gt;
-    <transition name="bounce" >
-      <div class="contact" id="contact" v-show="aa">
+    <!--联系我们-->
+    <div class="contact container" id="contact">
       <h3>联系我们</h3>
       <h4>contact us</h4>
       <form action="">
@@ -105,13 +104,12 @@
           <input type="button" value="发送">
         </div>
       </form>
-      <div class="address">
+     <!-- <div class="address hidden-md hidden-lg">
         <p>地址：湖北省武汉市江汉区泛海中央商务区soho城5栋1701号  </p>
         <p>工作时间：周一至周五  09:00 - 17:30</p>
         <p>联系方式：xxxxxxxx</p>
-      </div>
+      </div>-->
     </div>
-    </transition>-->
     <my-footer></my-footer>
   </div>
 </template>
@@ -127,8 +125,8 @@
         name:'',
         number:'',
         scroll2: '',
-        aa: false,
-        bb:false
+        aa: true,
+        bb:true
       }
     },
     mounted () {
@@ -215,6 +213,7 @@
   }
   .content{
     height: 100%;
+    padding-top: 5px;
   }
   .content>div{
     width: 100%;
@@ -224,17 +223,11 @@
     justify-content: space-between;
     height: 100%;
   }
-  .content dl{
+  .content dl>dt>img{
     margin: 0 auto;
   }
-  .content dl>dt{
-  /*  width: 120px;
-    height: 145px;*/
-  }
-  .content dl>dt>img{
-    /*width: 120px;*/
-  }
   .content dl>dd{
+    margin-top: 10px;
     text-align: center;
     color:#fff;
     font-size: 1.3rem;
@@ -268,6 +261,7 @@
     margin-top: 40px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   .img-container>dl{
@@ -296,10 +290,7 @@
     color:#666666;
   }
   .about{
-    width: 51%;
-    height: 390px;
-    padding-left: 24.5%;
-    padding-right: 24.5%;
+    height: 400px;
     padding-top: 80px;
   }
   .about>h3{
@@ -317,7 +308,7 @@
   }
   .about>p{
     font-size: 18px;
-    color:#999999;
+    color:#9F9F9F;
     letter-spacing: 3px;
     line-height: 50px;
     margin-top: 15px;
@@ -330,7 +321,7 @@
     width: 100%;
   }
   .contact{
-    width: 542px;
+    width: 548px;
     margin: 0 auto;
     height: 545px;
     padding-top: 105px;
@@ -427,12 +418,207 @@
     }
     .content dl{
       width: 50%;
+      margin-top: 20px;
+    }
+    .content{
+      height: 100%;
+      padding-top: 0px;
+    }
+    .content>div{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      margin-left: 0px;
+    }
+    .content dl>dt>img{
+      margin: 0 auto;
+      width: 80px;
+    }
+    .content dl>dd{
+      margin-top: 10px;
+      text-align: center;
+      color:#fff;
+      font-size: .9rem;
+      font-weight: 400;
+    }
+    .serve{
+        min-height: 979px;
+    }
+    .server-content{
+      padding-top:10px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .server-content>h3{
+      font-size: 1rem;
+    }
+    .server-content>p{
+      font-size: 1rem;
+      line-height: 6px;
+    }
+    .img-container{
+      margin-top: 20px;
+      width: 100%;
+      margin-left: 0px;
+    }
+    .img-container>dl{
+      padding: 0px;
+      padding-bottom: 10px;
+      background:#F1F1F1 ;
+    }
+    .img-container>dl>dt{
+      height: auto;
+    }
+    .img-container>dl dd{
+      margin-top: 10px;
+    }
+    .img-container p{
+      font-size: 1rem;
+      color:#9F9F9F;
+      line-height: 30px;
+    }
+    .about{
+      height: 482px;
+      padding-top: 80px;
+    }
+    .about>h3{
+      text-align: center;
+      color: #9F9F9F;
+      font-size: 1.2px;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+    .about>h4{
+      font-size: 1.2rem;
+      color: #9f9f9f;
+      text-align: center;
+      line-height: 1.5rem;
+    }
+    .about>p{
+      font-size: 1rem;
+      color:#9F9F9F;
+      letter-spacing:0px;
+      line-height: 1.5rem;
+      margin-top: 15px;
+      text-indent:2rem
+    }
+    .contact{
+      padding-top: 20px;
+      height: 355px;
+    }
+    .contact>h3{
+      font-size: 1.2rem;
+    }
+    .contact>h4{
+      font-size: 1.2rem;
+    }
+    .contact form>div{
+      height: 50px;
+    }
+    .send>input{
+      height: 50px;
+      line-height: 50px;
+      font-size: 1.2rem;
+    }
+
+    .address>p{
+      font-size: .8rem;
 
     }
   }
   /*平板*/
   @media screen and (min-width:708px) and (max-width:1024px){
+    .skill{
+      height: 150px;
+    }
+    .container{
+      width: 100%;
+    }
+    .content dl{
+      width: 25%;
+    }
+    .content{
+      height: 100%;
+      padding-top: 0px;
+    }
+    .content>div{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      margin-left: 0px;
+    }
+    .content dl>dt>img{
+      margin: 0 auto;
+      width: 80px;
+    }
+    .content dl>dd{
+      margin-top: 10px;
+      text-align: center;
+      color:#fff;
+      font-size: .9rem;
+      font-weight: 400;
+    }
 
+    .serve{
+      height: 350px;
+    }
+    .server-content{
+      padding-top:10px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .server-content>h3{
+      font-size: 1.2rem;
+    }
+    .server-content>p{
+      font-size: 1.2rem;
+      line-height: 6px;
+    }
+    .img-container{
+      margin-top: 20px;
+      width: 100%;
+      margin-left: 0px;
+    }
+    .img-container>dl{
+      padding: 0px;
+      width: 30%;
+      padding-bottom: 10px;
+      background:#F1F1F1 ;
+    }
+    .img-container>dl>dt{
+      height: auto;
+    }
+    .img-container>dl dd{
+      margin-top: 10px;
+    }
+    .img-container p{
+      font-size: 1.2rem;
+      color:#9F9F9F;
+      line-height: 30px;
+    }
+    .about{
+      padding-top: 40px;
+    }
+    .about>h3{
+      font-size: 1.3rem;
+    }
+    .contact{
+      padding-top: 40px;
+      height: 424px;
+      padding-left: 0px;
+    }
+    .contact>h3{
+      font-size: 1.2rem;
+    }
+    .contact>h4{
+      font-size: 1.2rem;
+    }
   }
   /*电脑*/
   @media screen and (min-width:1025px) {

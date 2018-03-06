@@ -1,17 +1,10 @@
 <template>
   <div class="footer">
-    <div class="container row">
-      <div class="logo col-md-3 col-sm-3" >
+    <div class="container footer-content">
+      <div class="logo " >
         <img src="../../static/img/logo.png" alt="" class="img-responsive">
       </div>
-      <div class="footer-nav col-md-7 col-sm-7">
-       <!-- <ul>
-          <li>联系我们</li>
-          <li>资质证书</li>
-          <li>客户反响</li>
-          <li>质量管理</li>
-          <li class="border_none">费用报价</li>
-        </ul>-->
+      <div class="footer-nav">
         <p>地址：湖北省武汉市江汉区泛海中央商务区soho城5栋1701号 </p>
         <p>工作时间：周一至周五  09:00 - 17:30</p>
         <p>联系方式：xxxxxxx</p>
@@ -19,7 +12,7 @@
           © Copyright 2018 武汉秒车网科技有限公司.All Rights Reserved.
         </p>
       </div>
-      <div class="erweima col-md-2 col-sm-2">
+      <div class="erweima">
         <img src="../../static/img/erweima.jpg" alt="" class="erweima img-responsive" >
       </div>
     </div>
@@ -38,30 +31,26 @@
   height: 222px;
   background: #6A6865;
 }
-  .container{
-    height: 222px;
-    display:flex;
-    display:-webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    justify-content:center;
-    align-items:center;
-  }
-  .logo{
-    float: left;
-    width: 21%;
-  }
+.footer-content{
+ /* width: 1170px;*/
+  height: 100%;
+  margin: 0 auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.logo{
+  width: 20%;
+}
+
   .logo>img{
     width: 237px;
     margin: 0 auto;
   }
-  .footer-nav{
-    display: inline-block;
-    width: 49%;
-    text-align: left;
-    margin-left: 35px;
-  }
+.footer-nav{
+  width: 60%;
+  padding-left: 10%;
+}
   .footer-nav>p{
     font-size: 1.2rem;
     color:#fff;
@@ -113,7 +102,20 @@
 }
 /*平板*/
 @media screen and (min-width:708px) and (max-width:1024px){
-
+  .logo>img{
+    width: 183px;
+  }
+  .footer-nav > p{
+    line-height: 20px;
+    font-size: 1rem;
+  }
+  .footer-nav{
+    width: 60%;
+    padding-left: 20px;
+  }
+  .erweima{
+    width: 11%;
+  }
 }
 /*电脑*/
 @media screen and (min-width:1025px) {
