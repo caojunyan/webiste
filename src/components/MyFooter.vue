@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <div class="logo">
-        <img src="../../static/img/logo.png" alt="">
+        <img src="../../static/img/logo.png" alt="" class="img-responsive">
       </div>
       <div class="footer-nav">
        <!-- <ul>
@@ -20,7 +20,7 @@
         </p>
       </div>
       <div class="erweima">
-        <img src="../../static/img/erweima.jpg" alt="" class="erweima">
+        <img src="../../static/img/erweima.jpg" alt="" class="erweima img-responsive" >
       </div>
     </div>
   </div>

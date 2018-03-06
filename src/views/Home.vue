@@ -112,7 +112,7 @@
       </div>
     </div>
     </transition>-->
-    <!--<my-footer></my-footer>-->
+    <my-footer></my-footer>
   </div>
 </template>
 
@@ -127,17 +127,14 @@
         name:'',
         number:'',
         scroll2: '',
-        aa: true,
+        aa: false,
         bb:false
       }
     },
-  /*  mounted () {
+    mounted () {
       window.addEventListener('scroll', this.menu)
-      this.$nextTick(() => {
-      this.scroll=new BScroll(this.$refs.wrapper,{})
-      })
     },
-    created:function() {
+   /* created:function() {
 // 主页添加键盘事件,注意,不能直接在焦点事件上添加回车
       var lett = this;
       document.onkeydown = function (e) {
@@ -153,7 +150,7 @@
       MyHeader,
       MyFooter
     },
-   /* methods:{
+    methods:{
       send(){
         var name=this.name;
         var number=this.number;
@@ -192,7 +189,7 @@
           console.log(res);
         });
       }
-    },*/
+    },
     watch:{
       'route':function(to,from){
         console.log(to)
