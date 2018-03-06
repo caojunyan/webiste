@@ -3,38 +3,34 @@
     <my-header></my-header>
     <!--banner图-->
     <div class="banner" id="banner" >
-      <div class="intro_info">
-        <h1 class="title">提升客户价值，增强企业竞争力</h1>
-        <p>您的企业发展好帮手</p>
-      </div>
       <div class="intro_pic">
-        <img src="../../static/img/banner.png" alt="">
+        <img src="../../static/img/banner.png" alt="" class="img-responsive">
       </div>
     </div>
     <!--四个圆-->
     <div class="skill">
-      <div class="content" >
+      <div class="container content" >
         <transition name="bounce">
-          <div v-show="aa">
-            <dl>
+          <div v-show="aa" class="row">
+            <dl class="col-md-3 col-sm-6">
               <dt>
                 <img src="../../static/img/team.png" alt="">
               </dt>
               <dd>专业团队</dd>
             </dl>
-            <dl>
+            <dl class="col-md-3 col-sm-6">
               <dt>
                 <img src="../../static/img/iconfont-fuwushichang.png" alt="">
               </dt>
               <dd>优质售后</dd>
             </dl>
-            <dl>
+            <dl class="col-md-3 col-sm-6">
               <dt>
                 <img src="../../static/img/iconfont-yiqiyibiao(1).png" alt="">
               </dt>
               <dd>快速高效</dd>
             </dl>
-            <dl>
+            <dl class="col-md-3 col-sm-6">
               <dt>
                 <img src="../../static/img/good(1).png" alt="">
               </dt>
@@ -45,7 +41,7 @@
       </div>
     </div>
     <!--服务宗旨-->
-    <div class="serve" id="service">
+  <!--  <div class="serve" id="service">
       <div class="server-content">
         <h3>服务宗旨</h3>
         <P>our service</P>
@@ -80,7 +76,7 @@
         </div>
       </div>
     </div>
-    <!--关于我们-->
+    &lt;!&ndash;关于我们&ndash;&gt;
     <div class="about" id="about">
       <h3>关于我们</h3>
       <h4>about us</h4>
@@ -89,11 +85,11 @@
       </p>
 
     </div>
-    <!--banner图片-->
+    &lt;!&ndash;banner图片&ndash;&gt;
     <div class="banner_pic">
       <img src="../../static/img/banner_pic.png" alt="">
     </div>
-    <!--联系我们-->
+    &lt;!&ndash;联系我们&ndash;&gt;
     <transition name="bounce" >
       <div class="contact" id="contact" v-show="aa">
       <h3>联系我们</h3>
@@ -115,8 +111,8 @@
         <p>联系方式：xxxxxxxx</p>
       </div>
     </div>
-    </transition>
-    <my-footer></my-footer>
+    </transition>-->
+    <!--<my-footer></my-footer>-->
   </div>
 </template>
 
@@ -124,24 +120,21 @@
   import BScroll from 'better-scroll'
   import MyHeader from '../components/MyHeader'
   import MyFooter from '../components/MyFooter'
-
   export default {
     name: '',
     data () {
       return {
         name:'',
         number:'',
-        scroll: '',
-        aa: false,
-        scroll1:'',
+        scroll2: '',
+        aa: true,
         bb:false
       }
     },
-    mounted () {
+  /*  mounted () {
       window.addEventListener('scroll', this.menu)
-      window.addEventListener('scroll', this.form)
       this.$nextTick(() => {
-        this.scroll = new Bscroll(this.$refs.wrapper, {})
+      this.scroll=new BScroll(this.$refs.wrapper,{})
       })
     },
     created:function() {
@@ -151,16 +144,16 @@
         var key = window.event.keyCode;
         if (key == 116) {
           var url=window.location.host ;
-         /* lett.$router.replace({path: url});*/
-       /*   window.location.href = url;*/
+         /!* lett.$router.replace({path: url});*!/
+       /!*   window.location.href = url;*!/
         }
       }
-    },
+    },*/
     components:{
       MyHeader,
       MyFooter
     },
-    methods:{
+   /* methods:{
       send(){
         var name=this.name;
         var number=this.number;
@@ -186,8 +179,8 @@
         }
       },
       menu () {
-        this.scroll = document.body.scrollTop;
-        if (this.scroll >= 300) {
+        this.scroll2 = document.body.scrollTop;
+        if (this.scroll2 >= 300) {
           this.aa = true
         } else {
           this.aa = false
@@ -198,16 +191,8 @@
         this.$axios.get("/",).then(res=>{
           console.log(res);
         });
-      },
-      form () {
-        this.scroll = document.body.scrollTop;
-        if (this.scroll >= 300) {
-          this.bb = true
-        } else {
-          this.bb = false
-        }
       }
-    },
+    },*/
     watch:{
       'route':function(to,from){
         console.log(to)
@@ -222,47 +207,22 @@
   .banner{
     margin-top: 80px;
     width: 100%;
-    height: 818px;
+    /*height: 818px;*/
     background: #fff;
   }
-  .intro_info{
-    float: left;
-    width: 53%;
-    text-align: center;
-    position: relative;
-    top:342px;
-    left:190px;
 
-  }
-  .intro_pic{
-    float: right;
-  }
-  .intro_info>h1{
-    font-size: 50px;
-    color:#999999;
-    font-weight: 400;
-    letter-spacing: 5px;
-    line-height: 145px;
-  }
-  .intro_info>p{
-    font-size: 27px;
-    color: #999999;
-    letter-spacing: 7px;
-  }
   .skill{
     width: 100%;
     height: 278px;
     background: #FD9E2D;
   }
   .content{
-    width: 51%;
-    margin: 0 auto;
     height: 100%;
-
   }
   .content>div{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     height: 100%;
@@ -271,16 +231,16 @@
     margin: 0 auto;
   }
   .content dl>dt{
-    width: 120px;
-    height: 145px;
+  /*  width: 120px;
+    height: 145px;*/
   }
   .content dl>dt>img{
-    width: 120px;
+    /*width: 120px;*/
   }
   .content dl>dd{
     text-align: center;
     color:#fff;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
   }
   .serve{
@@ -461,4 +421,24 @@
     }
   }
 
+
+
+  /*手机*/
+  @media screen and (max-width:707px) {
+    .container{
+      width: 100%;
+    }
+    .content dl{
+      width: 50%;
+
+    }
+  }
+  /*平板*/
+  @media screen and (min-width:708px) and (max-width:1024px){
+
+  }
+  /*电脑*/
+  @media screen and (min-width:1025px) {
+
+  }
 </style>

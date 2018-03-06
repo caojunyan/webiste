@@ -1,35 +1,42 @@
 <template>
-<div class="header">
-  <div>
-    <span class="title">武汉秒车网科技有限公司</span>
-    <ul class="nav" >
-      <li >
-        <a href="javascript:void(0);" :class="{ active: 1==isActive }" @click="onSwitch(1)">首页</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" :class="{ active: 2==isActive }" @click="onSwitch(2)">服务</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" :class="{ active: 3==isActive }" @click="onSwitch(3)">关于</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" :class="{ active: 4==isActive }" @click="onSwitch(4)">联系我们</a>
-      </li>
-    </ul>
-  </div>
+<div class="header ">
 
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">武汉秒车网科技有限公司</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">首页</a></li>
+          <li><a href="#">服务</a></li>
+          <li><a href="#">关于</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 </div>
 </template>
 
 <script>
     export default {
-      name: "my-header",
+     /* name: "my-header",
       data(){
         return{
           isActive:1
         }
       },
-     methods:{
+      methods:{
        onSwitch(index){
          this.isActive=index;
          if(index==1){
@@ -42,7 +49,7 @@
 
          }
        },
-     }
+     }*/
     }
 </script>
 
@@ -56,47 +63,116 @@
   left:0px;
   z-index:200;
 }
-.header>div{
-  width: 69%;
-  margin: 0 auto;
+.navbar{
+  height: 100%;
+  background: #4E4E4D;
+  border:none;
 }
-  .title{
-    width: 28%;
-    padding-left: 20px;
-    color:#fff;
-    font-size: 16px;
-    line-height: 80px;
-    display: inline-block;
-    font-weight: bold;
-    letter-spacing: 3px;
-  }
-  .nav{
-    width: 68%;
+.navbar-header{
+  line-height: 80px;
+  height: 100%;
+}
+.navbar-toggle{
+  margin-top: 23px;
+  margin-right:23px;
+}
+
+.navbar-header>a{
+  line-height: 80px;
+  height: 100%;
+  display: inline-block;
+  padding: 0;
+  color:#fff;
+}
+.navbar-header>a:hover{
+  color:#fff;
+}
+#bs-example-navbar-collapse-1{
+  background: #4E4E4D;
+}
+.navbar-nav>li>a:hover{
+  color:#fff;
+  background: #3D3D3C;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:link{
+  background: #3D3D3C;
+  color:#fff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:visited{
+  background: #3D3D3C;
+  color:#fff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:hover{
+  background: #3D3D3C;
+  color:#fff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:active{
+  background: #3D3D3C;
+  color:#fff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:visited{
+  background: #3D3D3C;
+  color:#fff;
+}
+.navbar-header>a{
+  padding-left: 20px;
+  display: inline-block;
+}
+/*手机*/
+@media screen and (max-width:707px) {
+
+}
+/*平板*/
+@media screen and (min-width:708px) and (max-width:1024px){
+  .navbar-nav{
     display: inline-block;
     float: right;
     list-style: none;
-    height: 100%;
-  }
-  .nav>li{
-    float: left;
-    width: 166px;
-    height: 100%;
+    height:100%;
     line-height: 80px;
-    text-align: center;
+    width: 68%;
   }
-  .nav>li>a{
-    display: inline-block;
-    font-size: 16px;
-    color:#fff;
-    text-decoration: none;
+  .navbar-nav>li{
+    height:80px;
+    line-height: 80px;
+    width: 20%;
+  }
+  .navbar-nav>li>a {
     width: 100%;
-    height: 100%;
+    text-align: center;
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    padding: 0;
+    font-size: 18px;
+    color: #fff;
   }
-  a.active{
-    background: #3D3D3C;
+}
+  /*电脑*/
+@media screen and (min-width:1025px) {
+  .navbar-nav{
+    display: inline-block;
+    float: right;
+    list-style: none;
+    height:100%;
+    line-height: 80px;
+    width: 68%;
   }
-  a.hover{
-    background: #3D3D3C;
+  .navbar-nav>li{
+    height:80px;
+    line-height: 80px;
+    width: 20%;
   }
-
+  .navbar-nav>li>a {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    padding: 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  }
 </style>

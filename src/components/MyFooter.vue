@@ -5,13 +5,16 @@
         <img src="../../static/img/logo.png" alt="">
       </div>
       <div class="footer-nav">
-        <ul>
+       <!-- <ul>
           <li>联系我们</li>
           <li>资质证书</li>
           <li>客户反响</li>
           <li>质量管理</li>
           <li class="border_none">费用报价</li>
-        </ul>
+        </ul>-->
+        <p>地址：湖北省武汉市江汉区泛海中央商务区soho城5栋1701号 </p>
+        <p>工作时间：周一至周五  09:00 - 17:30</p>
+        <p>联系方式：xxxxxxx</p>
         <p class="copyRight">
           © Copyright 2018 武汉秒车网科技有限公司.All Rights Reserved.
         </p>
@@ -36,8 +39,6 @@
   background: #6A6865;
 }
   .container{
-    width: 69%;
-    margin: 0 auto;
     height: 222px;
     display:flex;
     display:-webkit-box;
@@ -46,22 +47,25 @@
     display: -webkit-flex;
     justify-content:center;
     align-items:center;
-
   }
   .logo{
     float: left;
-    width: 25%;
-
+    width: 21%;
   }
   .logo>img{
-    width: 180px;
+    width: 237px;
     margin: 0 auto;
   }
   .footer-nav{
     display: inline-block;
-    width: 55%;
-    text-align: center;
-
+    width: 49%;
+    text-align: left;
+    margin-left: 35px;
+  }
+  .footer-nav>p{
+    font-size: 1.2rem;
+    color:#fff;
+    line-height: 38px;
   }
   .footer-nav>ul{
     list-style: none;
@@ -85,10 +89,26 @@
 }
   .erweima{
     width: 20%;
-    margin: 0 auto;
 
   }
   .erweima>img{
-    width: 106px;
+    width: 84px;
   }
+
+
+
+/*手机*/
+@media screen and (max-width:707px) {
+  .footer-nav{
+    width: 100%;
+  }
+}
+/*平板*/
+@media screen and (min-width:708px) and (max-width:1024px){
+
+}
+/*电脑*/
+@media screen and (min-width:1025px) {
+
+}
 </style>
