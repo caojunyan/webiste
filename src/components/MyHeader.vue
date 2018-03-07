@@ -119,9 +119,20 @@
   padding-left: 20px;
   display: inline-block;
 }
+.navbar-default .navbar-collapse{
+  border: none;
+}
 /*手机*/
 @media screen and (max-width:707px) {
-
+  .navbar-header>a{
+    font-size: 1rem;
+  }
+  .navbar-default .navbar-nav > .active > a{
+    font-size: 1rem;
+  }
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color:#fff;
 }
 /*平板*/
 @media screen and (min-width:708px) and (max-width:1024px){

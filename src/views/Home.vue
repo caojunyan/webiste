@@ -413,6 +413,7 @@
 
   /*手机*/
   @media screen and (max-width:707px) {
+
     .container{
       width: 100%;
     }
@@ -445,12 +446,13 @@
       font-weight: 400;
     }
     .serve{
-        min-height: 979px;
+        min-height: 1234px;
     }
     .server-content{
       padding-top:10px;
       padding-left: 0px;
       padding-right: 0px;
+      height: 100%;
     }
     .server-content>h3{
       font-size: 1rem;
@@ -468,6 +470,7 @@
       padding: 0px;
       padding-bottom: 10px;
       background:#F1F1F1 ;
+      height: auto;
     }
     .img-container>dl>dt{
       height: auto;
@@ -481,13 +484,14 @@
       line-height: 30px;
     }
     .about{
-      height: 482px;
-      padding-top: 80px;
+      height: auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
     .about>h3{
       text-align: center;
       color: #9F9F9F;
-      font-size: 1.2px;
+      font-size: 1.2rem;
       font-weight: 400;
       line-height: 1.5rem;
     }
@@ -514,9 +518,14 @@
     }
     .contact>h4{
       font-size: 1.2rem;
+      line-height: 0px;
+    }
+    .contact form{
+      margin-top: 25px;
     }
     .contact form>div{
       height: 50px;
+
     }
     .send>input{
       height: 50px;
@@ -527,6 +536,19 @@
     .address>p{
       font-size: .8rem;
 
+    }
+  }
+
+  /*iphone6*/
+  @media screen and (min-width:320px) and (max-width:375px){
+    .serve{
+      min-height: 1149px;
+    }
+  }
+  /*iphone5*/
+  @media screen and (min-width:320px) and (max-width:320px){
+    .serve{
+      min-height: 1050px;
     }
   }
   /*平板*/

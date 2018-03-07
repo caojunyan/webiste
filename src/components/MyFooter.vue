@@ -49,7 +49,7 @@
   }
 .footer-nav{
   width: 60%;
-  padding-left: 10%;
+  padding-left: 5%;
 }
   .footer-nav>p{
     font-size: 1.2rem;
@@ -89,7 +89,10 @@
 /*手机*/
 @media screen and (max-width:707px) {
   .footer{
-
+    height: 168px;
+  }
+  .logo{
+    width: 35%;
   }
   .footer-nav{
     width: 100%;
@@ -98,6 +101,9 @@
     font-size: .9rem;
     letter-spacing: 0;
     line-height: 1rem;
+  }
+  .footer-nav{
+    padding-left: 2%;
   }
 }
 /*平板*/
