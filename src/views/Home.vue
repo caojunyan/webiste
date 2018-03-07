@@ -115,7 +115,6 @@
 </template>
 
 <script>
-  import BScroll from 'better-scroll'
   import MyHeader from '../components/MyHeader'
   import MyFooter from '../components/MyFooter'
   export default {
@@ -127,17 +126,19 @@
       }
     },
     mounted () {
+      window.scrollTo(0,0);
     },
     created:function() {
+
 // 主页添加键盘事件,注意,不能直接在焦点事件上添加回车
-      var lett = this;
+      /*var lett = this;
       document.onkeydown = function (e) {
         var key = window.event.keyCode;
         if (key == 116) {
           lett.$router.replace({path: '/'});
-       /*   window.location.href = url;*/
+          /!*   window.location.href = url;*!/
         }
-      }
+      }*/
     },
     components:{
       MyHeader,
@@ -216,13 +217,12 @@
   }
   .serve{
     width: 100%;
-    height: 740px;
     background: #F1F1F1;
   }
   .server-content{
     width: 69%;
     margin: 0 auto;
-    height: 630px;
+ /*   height: 630px;*/
     padding-top: 66px;
   }
   .server-content>h3{
@@ -362,21 +362,8 @@
     outline: none;
     cursor: pointer;
   }
-  .address{
-    margin-top: 50px;
-    text-align: center;
-    color:#999999;
-    font-size: 18px;
-  }
   .address>p{
     line-height: 30px;
-  }
-  /*动画事件*/
-  .bounce-enter-active {
-    animation: bounce-in .5s;
-  }
-  .bounce-leave-active {
-    animation: bounce-out .5s;
   }
   @keyframes bounce-in {
     0% {
@@ -426,9 +413,6 @@
       color:#fff;
       font-size: .9rem;
       font-weight: 400;
-    }
-    .serve{
-        min-height: 1288px;
     }
     .server-content{
       padding-top:10px;
@@ -522,19 +506,6 @@
 
     }
   }
-
-  /*iphone6*/
-  @media screen and (min-width:320px) and (max-width:375px){
-    .serve{
-      min-height: 1185px;
-    }
-  }
-  /*iphone5*/
-  @media screen and (min-width:320px) and (max-width:320px){
-    .serve{
-      min-height: 1068px;
-    }
-  }
   /*平板*/
   @media screen and (min-width:708px) and (max-width:1024px){
     .skill{
@@ -570,10 +541,6 @@
       color:#fff;
       font-size: .9rem;
       font-weight: 400;
-    }
-
-    .serve{
-      height: 380px;
     }
     .server-content{
       padding-top:10px;
@@ -637,9 +604,5 @@
     .contact>h4{
       font-size: 1.8rem;
     }
-  }
-  /*电脑*/
-  @media screen and (min-width:1025px) {
-
   }
 </style>
