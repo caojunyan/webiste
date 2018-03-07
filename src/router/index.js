@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home'
-import Serve from '../views/Serve'
-import About from '../views/About'
-import Contact from '../views/Contact'
+import Join from '../views/Join'
+
 Vue.use(Router)
 
 export default new Router({
@@ -14,19 +13,9 @@ export default new Router({
       component: Home
     },
     {
-      path:'/serve',
-      name:'Serve',
-      component:Serve
-    },
-    {
-      path:'/about',
-      name:'About',
-      component:About
-    },
-    {
-      path:'/contact',
-      name:'Contact',
-      component:Contact
+      path:'/join',
+      name:'Join',
+      component:Join
     }
   ]
 })

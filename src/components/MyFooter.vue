@@ -52,9 +52,9 @@
   padding-left: 5%;
 }
   .footer-nav>p{
-    font-size: 1.2rem;
+    font-size: 18px;
     color:#fff;
-    line-height: 38px;
+    line-height: 21px;
   }
   .footer-nav>ul{
     list-style: none;
@@ -113,7 +113,7 @@
   }
   .footer-nav > p{
     line-height: 20px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .footer-nav{
     width: 60%;

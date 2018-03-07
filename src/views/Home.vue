@@ -2,7 +2,7 @@
   <div class="home wrapper" ref="wrapper" >
     <my-header></my-header>
     <!--banner图-->
-    <div class="banner" id="banner" >
+    <div class="banner d_jump" id="banner"  >
       <div class="intro_pic">
         <img src="../../static/img/banner.png" alt="" class="img-responsive">
       </div>
@@ -10,8 +10,8 @@
     <!--四个圆-->
     <div class="skill">
       <div class="container content" >
-        <transition name="bounce">
-          <div  class="row">
+
+          <div  class="row" >
             <dl class="col-md-3 col-sm-6">
               <dt>
                 <img src="../../static/img/team.png" alt="" class="img-responsive">
@@ -37,11 +37,11 @@
               <dd>客户好评</dd>
             </dl>
           </div>
-        </transition>
+
       </div>
     </div>
     <!--服务宗旨-->
-    <div class="serve" id="service">
+    <div class="serve d_jump" id="service">
       <div class="server-content container">
         <h3>服务宗旨</h3>
         <P>our service</P>
@@ -77,7 +77,7 @@
       </div>
     </div>
     <!--关于我们-->
-    <div class="about container" id="about">
+    <div class="about container d_jump" id="about">
       <h3>关于我们</h3>
       <h4>about us</h4>
       <p>
@@ -90,7 +90,7 @@
       <img src="../../static/img/banner_pic.png" alt="" class="img-responsive">
     </div>
     <!--联系我们-->
-    <div class="contact container" id="contact">
+    <div class="contact container d_jump" id="contact">
       <h3>联系我们</h3>
       <h4>contact us</h4>
       <form action="">
@@ -123,27 +123,22 @@
     data () {
       return {
         name:'',
-        number:'',
-        scroll2: '',
-        aa: true,
-        bb:true
+        number:''
       }
     },
     mounted () {
-      window.addEventListener('scroll', this.menu)
     },
-   /* created:function() {
+    created:function() {
 // 主页添加键盘事件,注意,不能直接在焦点事件上添加回车
       var lett = this;
       document.onkeydown = function (e) {
         var key = window.event.keyCode;
         if (key == 116) {
-          var url=window.location.host ;
-         /!* lett.$router.replace({path: url});*!/
-       /!*   window.location.href = url;*!/
+          lett.$router.replace({path: '/'});
+       /*   window.location.href = url;*/
         }
       }
-    },*/
+    },
     components:{
       MyHeader,
       MyFooter
@@ -173,25 +168,11 @@
 
         }
       },
-      menu () {
-        this.scroll2 = document.body.scrollTop;
-        if (this.scroll2 >= 300) {
-          this.aa = true
-        } else {
-          this.aa = false
-        }
-      },
       // 提交
       submit(){
         this.$axios.get("/",).then(res=>{
           console.log(res);
         });
-      }
-    },
-    watch:{
-      'route':function(to,from){
-        console.log(to)
-        console.log(from)
       }
     }
   }
@@ -242,7 +223,7 @@
     width: 69%;
     margin: 0 auto;
     height: 630px;
-    padding-top: 100px;
+    padding-top: 66px;
   }
   .server-content>h3{
     text-align: center;
@@ -291,7 +272,7 @@
   }
   .about{
     height: 400px;
-    padding-top: 80px;
+    padding-top: 41px;
   }
   .about>h3{
     text-align: center;
@@ -324,7 +305,7 @@
     width: 548px;
     margin: 0 auto;
     height: 545px;
-    padding-top: 105px;
+    padding-top: 63px;
   }
   .contact>h3{
     text-align: center;
@@ -419,7 +400,8 @@
     }
     .content dl{
       width: 50%;
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-bottom: 0;
     }
     .content{
       height: 100%;
@@ -446,7 +428,7 @@
       font-weight: 400;
     }
     .serve{
-        min-height: 1234px;
+        min-height: 1288px;
     }
     .server-content{
       padding-top:10px;
@@ -455,10 +437,12 @@
       height: 100%;
     }
     .server-content>h3{
-      font-size: 1rem;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     .server-content>p{
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 6px;
     }
     .img-container{
@@ -468,7 +452,6 @@
     }
     .img-container>dl{
       padding: 0px;
-      padding-bottom: 10px;
       background:#F1F1F1 ;
       height: auto;
     }
@@ -479,7 +462,8 @@
       margin-top: 10px;
     }
     .img-container p{
-      font-size: 1rem;
+      font-size: 1.5rem;
+      margin: 0;
       color:#9F9F9F;
       line-height: 30px;
     }
@@ -491,7 +475,7 @@
     .about>h3{
       text-align: center;
       color: #9F9F9F;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: 400;
       line-height: 1.5rem;
     }
@@ -502,22 +486,22 @@
       line-height: 1.5rem;
     }
     .about>p{
-      font-size: 1rem;
+      font-size: 1.3rem;
       color:#9F9F9F;
       letter-spacing:0px;
-      line-height: 1.5rem;
+      line-height: 2rem;
       margin-top: 15px;
       text-indent:2rem
     }
     .contact{
-      padding-top: 20px;
+      padding-top: 8px;
       height: 355px;
     }
     .contact>h3{
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
     .contact>h4{
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       line-height: 0px;
     }
     .contact form{
@@ -542,13 +526,13 @@
   /*iphone6*/
   @media screen and (min-width:320px) and (max-width:375px){
     .serve{
-      min-height: 1149px;
+      min-height: 1185px;
     }
   }
   /*iphone5*/
   @media screen and (min-width:320px) and (max-width:320px){
     .serve{
-      min-height: 1050px;
+      min-height: 1068px;
     }
   }
   /*平板*/
@@ -561,6 +545,7 @@
     }
     .content dl{
       width: 25%;
+      margin-bottom: 0px;
     }
     .content{
       height: 100%;
@@ -588,7 +573,7 @@
     }
 
     .serve{
-      height: 350px;
+      height: 380px;
     }
     .server-content{
       padding-top:10px;
@@ -596,14 +581,17 @@
       padding-right: 0px;
     }
     .server-content>h3{
-      font-size: 1.2rem;
+      font-size: 2rem;
+      line-height: 13px;
+      margin-top: 23px;
+      margin-bottom: 0;
     }
     .server-content>p{
-      font-size: 1.2rem;
-      line-height: 6px;
+      font-size: 1.8rem;
+      line-height: 47px;
     }
     .img-container{
-      margin-top: 20px;
+      margin-top: 0px;
       width: 100%;
       margin-left: 0px;
     }
@@ -617,29 +605,37 @@
       height: auto;
     }
     .img-container>dl dd{
-      margin-top: 10px;
+      margin-top: 23px;
     }
     .img-container p{
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color:#9F9F9F;
-      line-height: 30px;
+      line-height: 22px;
+      margin: 0;
     }
     .about{
       padding-top: 40px;
     }
     .about>h3{
-      font-size: 1.3rem;
+      font-size: 2rem;
+    }
+    .about>h4{
+      font-size: 1.8rem;
+      color: #9f9f9f;
+      text-align: center;
+      line-height: 14px;
+      margin: 0;
     }
     .contact{
-      padding-top: 40px;
+      padding-top: 12px;
       height: 424px;
       padding-left: 0px;
     }
     .contact>h3{
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
     .contact>h4{
-      font-size: 1.2rem;
+      font-size: 1.8rem;
     }
   }
   /*电脑*/

@@ -17,10 +17,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">首页</a></li>
-          <li><a href="#">服务</a></li>
-          <li><a href="#">关于</a></li>
-          <li><a href="#">联系我们</a></li>
+          <li :class="{ active_header: 1==isActive }" @click="onSwitch(1)"><router-link :to="{path:'/'}">首页</router-link></li>
+          <li :class="{ active_header: 2==isActive }" @click="onSwitch(2)"><a  @click.prevent="custormAnchor('service')"  >服务</a></li>
+          <li :class="{ active_header: 3==isActive }" @click="onSwitch(3)"><a  href="" @click.prevent="custormAnchor('about')">关于</a></li>
+          <li :class="{ active_header: 4==isActive }" @click="onSwitch(4)"><a href="" @click.prevent="custormAnchor('contact')">联系我们</a ></li>
+          <li :class="{ active_header: 5==isActive }" @click="onSwitch(5)"><router-link :to="{path:'/join'}">加入我们</router-link></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -30,26 +31,38 @@
 
 <script>
     export default {
-     /* name: "my-header",
+      name: "my-header",
       data(){
         return{
-          isActive:1
+          isActive:1,
+          onScroll:''
         }
+      },
+      mounted: function () {
+
       },
       methods:{
        onSwitch(index){
          this.isActive=index;
-         if(index==1){
-
-         }else if(index==2){
-
-         }else if(index==3){
-
-         }else{
-
-         }
+      /*   let jump = document.querySelectorAll('.d_jump')
+        // 获取需要滚动的距离
+         let total = jump[index].offsetTop
+         console.log(total)
+         // Chrome
+         document.body.scrollTop = total
+         console.log(document.body.scrollTop)
+         // Firefox
+         document.documentElement.scrollTop = total
+        // Safari
+         window.pageYOffset = total*/
        },
-     }*/
+       custormAnchor(anchorName) {
+          // 找到锚点
+          let anchorElement = document.getElementById(anchorName);
+          // 如果对应id的锚点存在，就跳转到锚点
+          if(anchorElement) { anchorElement.scrollIntoView(); }
+        }
+     }
     }
 </script>
 
@@ -122,13 +135,23 @@
 .navbar-default .navbar-collapse{
   border: none;
 }
+.active_header{
+  background: #3d3d3c;
+}
+.navbar-default .navbar-nav>li>a{
+  color:#fff;
+  cursor:pointer;
+}
 /*手机*/
 @media screen and (max-width:707px) {
   .navbar-header>a{
-    font-size: 1rem;
+    font-size: 1.8rem;
   }
   .navbar-default .navbar-nav > .active > a{
-    font-size: 1rem;
+    font-size: 1.8rem;
+  }
+  .navbar-default .navbar-nav>li>a{
+    font-size: 1.5rem;
   }
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
