@@ -1,8 +1,8 @@
 <template>
   <div class="home wrapper" ref="wrapper" >
-    <my-header></my-header>
+    <my-header @jump="jump" ></my-header>
     <!--banner图-->
-    <div class="banner d_jump" id="banner"  >
+    <div class="banner d_jump" id="banner" ref="header">
       <div class="intro_pic">
         <img src="../../static/img/banner.png" alt="" class="img-responsive">
       </div>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <!--服务宗旨-->
-    <div class="serve d_jump" id="service">
+    <div class="serve d_jump" id="service" ref="service">
       <div class="server-content container">
         <h3>服务宗旨</h3>
         <P>our service</P>
@@ -77,7 +77,7 @@
       </div>
     </div>
     <!--关于我们-->
-    <div class="about container d_jump" id="about">
+    <div class="about container d_jump" id="about" ref="about">
       <h3>关于我们</h3>
       <h4>about us</h4>
       <p>
@@ -90,7 +90,7 @@
       <img src="../../static/img/banner_pic.png" alt="" class="img-responsive">
     </div>
     <!--联系我们-->
-    <div class="contact container d_jump" id="contact">
+    <div class="contact container d_jump" id="contact" ref="contact">
       <h3>联系我们</h3>
       <h4>contact us</h4>
       <form action="">
@@ -126,19 +126,9 @@
       }
     },
     mounted () {
-      window.scrollTo(0,0);
-    },
-    created:function() {
-
-// 主页添加键盘事件,注意,不能直接在焦点事件上添加回车
-      /*var lett = this;
-      document.onkeydown = function (e) {
-        var key = window.event.keyCode;
-        if (key == 116) {
-          lett.$router.replace({path: '/'});
-          /!*   window.location.href = url;*!/
-        }
-      }*/
+      setTimeout(()=>{
+        /*this.jump('header')*/
+      },20)
     },
     components:{
       MyHeader,
@@ -174,7 +164,67 @@
         this.$axios.get("/",).then(res=>{
           console.log(res);
         });
-      }
+      },
+      jump (id) {
+        //console.log(this.$route.hash)
+        // 用 class="d_jump" 添加锚点
+        let jump = document.querySelectorAll('.d_jump')
+        let total=0
+        if(id==="service"){
+          total= this.$refs.service.offsetTop
+        }
+        if(id==="about"){
+          total= this.$refs.about.offsetTop
+        }
+        if(id==="contact"){
+          total= this.$refs.contact.offsetTop
+        }
+        if(id==="header"){
+          console.log("header")
+          total= this.$refs.header.offsetTop
+        }
+        let distance = document.documentElement.scrollTop || document.body.scrollTop
+        // 平滑滚动，时长500ms，每10ms一跳，共50跳
+        let step = total / 50
+        if (total > distance) {
+          smoothDown()
+        } else {
+          let newTotal = distance - total + 100
+          step = newTotal / 50
+          smoothUp()
+        }
+        function smoothDown () {
+          if (distance < total) {
+            distance += step
+            // Firefox
+            document.documentElement.scrollTop = distance
+            // Chrome
+            document.body.scrollTop = distance
+            setTimeout(smoothDown, 10)
+          } else {
+            document.documentElement.scrollTop = total
+            document.body.scrollTop = total
+            window.pageYOffset = total
+          }
+        }
+        function smoothUp () {
+          if (distance > total) {
+            distance -= step
+            // Firefox
+            document.documentElement.scrollTop = distance
+            // Chrome
+            document.body.scrollTop = distance
+            setTimeout(smoothUp, 10)
+          } else {
+            document.documentElement.scrollTop = total
+            document.body.scrollTop = total
+            window.pageYOffset = total
+          }
+        }
+      },
+    },
+    mounted(){
+      //console.log(this.$route);
     }
   }
 </script>

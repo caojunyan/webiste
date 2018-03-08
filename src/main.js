@@ -13,6 +13,8 @@ Vue.prototype.$axios = axios
 new Vue({
   el: '#app',
   router,
+  mode:"history",
   components: { App },
   template: '<App/>'
+
 })

@@ -1,8 +1,8 @@
 <template>
   <div class="serve">
-    <my-header></my-header>
+    <my-header :defaultActive='5' ></my-header>
       <!--banner-->
-    <div class="banner">
+    <div class="banner" id="top">
       <img src="../../static/img/join_banner.png" alt="">
     </div>
     <div class="content container">
@@ -44,10 +44,7 @@
           <h3>PHP工程师</h3>
           <span>月薪：4000-6000</span>
         </div>
-          <p>
-          1.负责公司项目产品的研发；2.微信接口开发3.参与后台管理系统开发、维护和管理；4.遵循开发管理流程，编写和完善相关文档
-        </p>
-          <p>1.负责公司项目产品的研发；2.微信接口开发3.参与后台管理系统开发、维护和管理；4.遵循开发管理流程，编写和完善相关文档</p>
+          <p>岗位要求：1.负责公司项目产品的研发；2.微信接口开发3.参与后台管理系统开发、维护和管理；4.遵循开发管理流程，编写和完善相关文档</p>
           <p>3.熟悉MySQL数据库操作，熟悉SQL语句调优；4.熟悉LNMP架构，能进行LNMP网站架构的系统配置、安全、性能的调优；5.有电子商务，微信，支付等相关开发经验优先6.工作认真仔细，有责任心，具备良好的团队合作精神和主动学习的能力</p>
       </div>
         <div class="worker">
@@ -111,7 +108,10 @@
         components:{
           MyHeader,
           MyFooter
-        }
+        },
+        mounted () {
+      },
+
     }
 </script>
 
